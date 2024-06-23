@@ -33,7 +33,8 @@ export default function Slider() {
             <div className="slider" data-testid="slider">
                 <p className="slider-title"
                    data-testid="slider-title-test">{sliderData.find(obj => obj.id === index).title}</p>
-                <img src={`/images/img-${index}.jpg`} alt={sliderData.find(obj => obj.id === index).description}
+                <img src={`/React-Slider/images/img-${index}.jpg`}
+                     alt={sliderData.find(obj => obj.id === index).description}
                      className="slider-image"/>
 
                 <button data-testid="prev-button" onClick={() => toggleImage(-1)}
