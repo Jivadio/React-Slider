@@ -1,4 +1,4 @@
-export const sliderData = [
+const sliderData = [
     {
         id: 1,
         title: 'Slide 1',
@@ -20,3 +20,5 @@ export const sliderData = [
         title: 'Slide 5',
     },
 ]
+
+export default sliderData
