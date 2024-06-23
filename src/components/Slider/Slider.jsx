@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/solid'
 import './Slider.css'
 import sliderData from '../../data/sliderData'
@@ -8,17 +8,24 @@ export default function Slider() {
     const [index, setIndex] = useState(1)
 
     function toggleImage(indexPayload) {
-        let newState;
-        if (indexPayload + index > sliderData.length) {
-            newState = 1;
-        } else if (indexPayload + index < 1) {
-            newState = sliderData.length;
-        } else {
-            newState = index + indexPayload;
-        }
-
-        setIndex(newState);
+        setIndex(state => {
+            if (indexPayload + state > sliderData.length) {
+                return 1;
+            } else if (indexPayload + state < 1) {
+                return sliderData.length;
+            } else {
+                return state + indexPayload;
+            }
+        })
     }
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            toggleImage(1);
+        }, 1500);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     return (
         <>
