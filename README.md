@@ -1,8 +1,27 @@
-# React + Vite
+# React-Slider
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est une application React qui utilise npm comme gestionnaire de paquets. Il comprend un composant de diaporama
+qui utilise un tableau de données pour générer chaque diapositive. Ainsi que Heroicons pour les icônes.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pour installer les dépendances du projet, exécutez la commande suivante :
+
+```bash
+npm install
+```
+
+## Utilisation
+
+Pour démarrer l'application, utilisez la commande suivante :
+
+```bash
+npm run dev
+```
+
+L'application démarrera et sera accessible à l'adresse `http://localhost:3000`.
+
+## Structure du Projet
+
+Le projet comprend un composant principal `Slider` qui est exporté par défaut. Ce composant utilise un tableau de
+données pour générer un diaporama. Chaque diapositive comprend une image, un titre et une description.
