@@ -22,7 +22,7 @@ export default function Slider() {
     useEffect(() => {
         const intervalId = setInterval(() => {
             toggleImage(1);
-        }, 1500);
+        }, 2000);
 
         return () => clearInterval(intervalId);
     }, []);
@@ -32,13 +32,14 @@ export default function Slider() {
             <p className="index-key">{index}/{sliderData.length}</p>
             <div className="slider">
                 <p className="slider-title">{sliderData.find(obj => obj.id === index).title}</p>
-                <img src={`/images/img-${index}.jpg`} alt="slide 1" className="slider-image"/>
+                <img src={`/images/img-${index}.jpg`} alt={sliderData.find(obj => obj.id === index).description}
+                     className="slider-image"/>
 
                 <button onClick={() => toggleImage(-1)} className="navigation-button prev-button">
-                    <ChevronLeftIcon className="navigation-button-icon-prev"/>
+                    <ChevronLeftIcon className="navigation-button-icon-prev" alt="previous button"/>
                 </button>
                 <button onClick={() => toggleImage(1)} className="navigation-button next-button">
-                    <ChevronRightIcon className="navigation-button-icon-next"/>
+                    <ChevronRightIcon className="navigation-button-icon-next" alt="next button"/>
                 </button>
             </div>
         </>
