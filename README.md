@@ -11,6 +11,17 @@ Pour installer les dépendances du projet, exécutez la commande suivante :
 npm install
 ```
 
+## Configuration des tests
+
+Nous utilisons Jest comme cadre de test. La configuration de Jest est définie dans le fichier `jest.config.cjs`. Les
+tests sont écrits en JavaScript et transformés à l'aide de Babel.
+
+Pour installer les dépendances nécessaires à l'exécution des tests, utilisez la commande suivante :
+
+```bash
+npm install --save-dev jest jest-environment-jsdom babel-jest
+```
+
 ## Utilisation
 
 Pour démarrer l'application, utilisez la commande suivante :
@@ -20,6 +31,12 @@ npm run dev
 ```
 
 L'application démarrera et sera accessible à l'adresse `http://localhost:3000`.
+
+Pour exécuter les tests, utilisez la commande suivante :
+
+```bash
+npm run test
+```
 
 ## Structure du Projet
 
