@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/solid'
 import './Slider.css'
 import sliderData from '../../data/sliderData'
@@ -30,15 +30,18 @@ export default function Slider() {
     return (
         <>
             <p className="index-key">{index}/{sliderData.length}</p>
-            <div className="slider">
-                <p className="slider-title">{sliderData.find(obj => obj.id === index).title}</p>
+            <div className="slider" data-testid="slider">
+                <p className="slider-title"
+                   data-testid="slider-title-test">{sliderData.find(obj => obj.id === index).title}</p>
                 <img src={`/images/img-${index}.jpg`} alt={sliderData.find(obj => obj.id === index).description}
                      className="slider-image"/>
 
-                <button onClick={() => toggleImage(-1)} className="navigation-button prev-button">
+                <button data-testid="prev-button" onClick={() => toggleImage(-1)}
+                        className="navigation-button prev-button">
                     <ChevronLeftIcon className="navigation-button-icon-prev" alt="previous button"/>
                 </button>
-                <button onClick={() => toggleImage(1)} className="navigation-button next-button">
+                <button data-testid="next-button" onClick={() => toggleImage(1)}
+                        className="navigation-button next-button">
                     <ChevronRightIcon className="navigation-button-icon-next" alt="next button"/>
                 </button>
             </div>
