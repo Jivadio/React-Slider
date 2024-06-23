@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen, fireEvent} from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Slider from './Slider';
+import Slider from './Slider.jsx';
 
 describe('Slider Component', () => {
     const sliderData = [
